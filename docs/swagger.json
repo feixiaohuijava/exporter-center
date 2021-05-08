@@ -1,0 +1,91 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "exporter-center",
+        "title": "这里写标题",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "费晓晖",
+            "url": "http://www.swagger.io/support",
+            "email": "feixiaohui@yl-scm.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "host": "10.30.8.24:31779",
+    "paths": {
+        "/auth/login": {
+            "post": {
+                "description": "获取token接口",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "获取token接口"
+                ],
+                "summary": "获取token接口",
+                "parameters": [
+                    {
+                        "description": "AD账号",
+                        "name": "username",
+                        "in": "body",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "AD密码",
+                        "name": "password",
+                        "in": "body",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            }
+        },
+        "/phone/callphone": {
+            "post": {
+                "description": "{\"alertCall\": {\"alertName\": \"监控告警\", \"voiceName\": \"运维平台\", \"project\": \"平台运维\", \"user\": [{\"username\": \"feixiaohui\", \"phone\": \"13048856263\"}]}}",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "电话接口"
+                ],
+                "summary": "电话接口",
+                "parameters": [
+                    {
+                        "description": "参数",
+                        "name": "alertCall",
+                        "in": "body",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "description": "application/json",
+                        "name": "Content-Type",
+                        "in": "header"
+                    },
+                    {
+                        "type": "string",
+                        "description": "JWT Token",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                ]
+            }
+        }
+    }
+}

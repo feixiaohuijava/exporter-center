@@ -1,0 +1,61 @@
+host: 10.30.8.24:31779
+info:
+  contact:
+    email: feixiaohui@yl-scm.com
+    name: 费晓晖
+    url: http://www.swagger.io/support
+  description: exporter-center
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: 这里写标题
+  version: "1.0"
+paths:
+  /auth/login:
+    post:
+      consumes:
+      - application/json
+      description: 获取token接口
+      parameters:
+      - description: AD账号
+        in: body
+        name: username
+        schema:
+          type: string
+      - description: AD密码
+        in: body
+        name: password
+        schema:
+          type: string
+      produces:
+      - application/json
+      summary: 获取token接口
+      tags:
+      - 获取token接口
+  /phone/callphone:
+    post:
+      consumes:
+      - application/json
+      description: '{"alertCall": {"alertName": "监控告警", "voiceName": "运维平台", "project":
+        "平台运维", "user": [{"username": "feixiaohui", "phone": "13048856263"}]}}'
+      parameters:
+      - description: 参数
+        in: body
+        name: alertCall
+        schema:
+          type: string
+      - description: application/json
+        in: header
+        name: Content-Type
+        type: string
+      - description: JWT Token
+        in: header
+        name: Authorization
+        type: string
+      produces:
+      - application/json
+      summary: 电话接口
+      tags:
+      - 电话接口
+swagger: "2.0"

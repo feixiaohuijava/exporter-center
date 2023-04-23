@@ -5,8 +5,6 @@
     go build 
 
 
-svc地址: http://10.30.8.24:31779
-swagger地址: http://10.30.8.24:31779/swagger/index.html
     
     
 关于前后端交流
